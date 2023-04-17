@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+html, body{
+    background-color: #121213;
+    height: 100%;
+}
+
+#container{
+    height: 100%;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    flex-direction: column;
+}
+
+#game{
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title{
+    color: white; 
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.4rem 0 0.4rem 0;
+    text-align: center;
+}
+
+header{
+    border-bottom: 1px solid rgb(58, 58, 60);
+}
+
+#board-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#popup{
+    font-weight: bold;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    position: absolute;
+    background-color: white;
+    height: 45px;
+    width: 200px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    z-index: 2; 
+    border-color: white;
+}
+
+#board{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.square{
+    border: 2px solid rgb(58, 58, 60);
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    user-select: none;
+}
+
+#keyboard-container{
+    height: 200px;
+}
+
+.keyboard-row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+.keyboard-row button{
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    flex-grow: 1;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.keyboard-row button.wide-button{
+    flex-grow: 1.5;
+}
+
+.spacer-half{
+    flex-grow: 0.5;
+}
+
+@media screen and (max-height: 700px) {
+    html, body{
+        height: none;
+    }
+    
+    .square{
+        min-height: 50px;
+        min-width: 50px;
+    }
+    
+    .main-title{
+        font-size: 1.75rem;
+        margin: 0.4rem 0 0.4rem 0;
+    }
+}
